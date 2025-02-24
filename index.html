@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieCorn - Movie Search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Header/Logo Section -->
+        <header class="logo">
+            <div class="container">
+                <p>Movie<span>Info.</span></p>
+            </div>
+        </header>
+        
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="container">
+                <div class="search-element">
+                    <h3>Search Movie:</h3>
+                    <input type="text" class="form-control" placeholder="Search Movie Title ..." id="movie-search-box">
+                    <div class="search-list" id="search-list"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <main class="container">
+            <div class="result-container">
+                <div class="result-grid" id="result-grid"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

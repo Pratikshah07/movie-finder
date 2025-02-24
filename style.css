@@ -1,0 +1,281 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* CSS Variables */
+:root {
+    --md-dark-color: #1d1d1d;
+    --dark-color: #171717;
+    --light-dark-color: #292929;
+    --yellow-color: #11d4ca;
+    --transition-speed: 0.3s;
+}
+
+/* Base Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--dark-color);
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+/* Layout */
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+/* Logo Styles */
+.logo {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--light-dark-color);
+    background-color: var(--md-dark-color);
+}
+
+.logo p {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bold;
+    transition: transform var(--transition-speed);
+}
+
+.logo p span {
+    color: var(--yellow-color);
+    display: inline-block;
+    animation: bounce 2s infinite;
+}
+
+/* Search Section */
+.search-section {
+    background-color: var(--md-dark-color);
+    padding: 2rem 0;
+    position: relative;
+    z-index: 100;
+}
+
+.search-element {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.search-element h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.search-element .form-control {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    color: var(--dark-color);
+    background: #fff;
+    transition: all var(--transition-speed);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-element .form-control:focus {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
+
+/* Search List */
+.search-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--light-dark-color);
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.search-list.show-search-list {
+    display: block;
+}
+
+.search-list-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.search-list-item:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.search-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(10px);
+}
+
+.search-item-thumbnail {
+    width: 50px;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.search-item-thumbnail img {
+    width: 50px;
+    height: 70px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.search-item-info h3 {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.search-item-info p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Result Container */
+.result-container {
+    padding: 3rem 0;
+    flex-grow: 1;
+}
+
+.result-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+/* Movie Details */
+.movie-poster img {
+    max-width: 300px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.movie-info {
+    color: #fff;
+}
+
+.movie-title {
+    font-size: 2.5rem;
+    color: var(--yellow-color);
+    margin-bottom: 1.5rem;
+}
+
+.movie-misc-info {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.movie-misc-info li {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+}
+
+.genre, .writer, .actors, .plot, .language, .awards {
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+.awards i {
+    color: var(--yellow-color);
+    margin-right: 0.5rem;
+}
+
+/* Scrollbar Styles */
+.search-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.search-list::-webkit-scrollbar-track {
+    background: var(--md-dark-color);
+    border-radius: 10px;
+}
+
+.search-list::-webkit-scrollbar-thumb {
+    background: var(--yellow-color);
+    border-radius: 10px;
+}
+
+/* Animations */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-5px);
+    }
+    60% {
+        transform: translateY(-3px);
+    }
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .result-grid {
+        grid-template-columns: 300px 1fr;
+        align-items: start;
+    }
+}
+
+@media (max-width: 767px) {
+    .search-element h3 {
+        font-size: 1.5rem;
+    }
+
+    .search-element .form-control {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .movie-title {
+        font-size: 2rem;
+    }
+
+    .movie-misc-info {
+        flex-direction: column;
+    }
+
+    .movie-poster img {
+        max-width: 250px;
+    }
+}
